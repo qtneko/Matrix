@@ -4,6 +4,12 @@ project(matrix)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+if (MSVC)
+    add_compile_options(/W3)
+else()
+    add_compile_options(-Wall -Wextra -pedantic)
+endif()
+
 include(FetchContent)
 
 FetchContent_Declare(fmt
